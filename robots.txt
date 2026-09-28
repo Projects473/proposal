@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ghosten22.github.io/savvy-tech/sitemap.xml
