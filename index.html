@@ -119,7 +119,9 @@ section{padding-block:88px}
 @media (max-width:480px){.feat-grid{grid-template-columns:1fr}}
 
 /* Pricing */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+#pricing .wrap{max-width:1200px}
+#pricing .plan{padding:32px 24px}
 .plan{background:var(--card);border-radius:22px;padding:32px 28px;display:flex;flex-direction:column;border:1px solid var(--line);position:relative}
 .plan.best{border:2px solid var(--accent)}
 .tag{position:absolute;top:-13px;left:28px;background:var(--accent);color:#fff;font-size:12px;font-weight:600;border-radius:980px;padding:4px 12px}
@@ -135,7 +137,8 @@ section{padding-block:88px}
 .plan li{display:flex;gap:10px}
 .plan li::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%230071e3' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
 .plan .note{margin-top:auto;padding-top:20px;font-size:13px;color:var(--ink-2)}
-@media (max-width:860px){.plans{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
+@media (max-width:1100px){.plans{grid-template-columns:repeat(2,1fr);max-width:860px;margin:0 auto}}
+@media (max-width:640px){.plans{grid-template-columns:1fr;max-width:460px}}
 
 .rule{margin:36px auto 0;max-width:720px;display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 24px}
 .rule .ico{flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
@@ -227,7 +230,7 @@ td.hl{color:var(--good);font-weight:600}
 .icon-x{background:none;border:0;color:var(--ink-2);font-size:24px;line-height:1;width:34px;height:34px;border-radius:50%;cursor:pointer}
 .icon-x:hover{background:var(--bg-alt)}
 .cart-panel{border-top:1px solid var(--line);margin-top:14px;padding-top:14px;display:grid;gap:14px}
-.seg{display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg-alt);border-radius:10px;padding:3px;gap:3px}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);background:var(--bg-alt);border-radius:10px;padding:3px;gap:3px}
 .seg button{font:inherit;font-size:14px;font-weight:500;border:0;background:transparent;color:var(--ink);padding:7px 6px;border-radius:8px;cursor:pointer}
 .seg button[aria-checked="true"]{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.15);font-weight:600}
 .cart-inner.pulse{animation:pulse .5s ease}
@@ -420,7 +423,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="plans">
         <div class="plan" data-plan="quarterly">
           <h3>Quarterly</h3>
-          <p class="sub">The starting plan. Every new website begins here.</p>
+          <p class="sub">The simplest way to get started.</p>
           <div class="price"><span class="amt num">$135</span><span class="per">/ month</span></div>
           <p class="billed num">$405 XCD billed every 3 months</p>
           <span class="save num">Save $45 per quarter · 10% off</span>
@@ -433,8 +436,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <li>Monthly performance report</li>
             <li>You own all files and the domain</li>
           </ul>
-          <p class="note">Required to start. Unlocks monthly billing after your first quarter.</p>
+          <p class="note">Unlocks monthly billing after your first quarter.</p>
           <button type="button" class="choose no-print" id="choose-quarterly" data-choose="quarterly" aria-pressed="false"><span class="choose-add">Add Quarterly to cart</span><span class="choose-in">In your cart · Remove</span></button>
+        </div>
+
+        <div class="plan" data-plan="sixmonth">
+          <h3>6 Months</h3>
+          <p class="sub">More savings, with a shorter commitment than a year.</p>
+          <div class="price"><span class="amt num">$125</span><span class="per">/ month</span></div>
+          <p class="billed num">$750 XCD billed every 6 months</p>
+          <span class="save num">Save $150 per 6 months · 17% off</span>
+          <ul>
+            <li>Everything in Quarterly</li>
+            <li>SEO review and keyword updates every 6 months</li>
+            <li>Security and uptime checks every month</li>
+            <li>Price locked for 6 months</li>
+            <li>You own all files and the domain</li>
+          </ul>
+          <p class="note">A strong middle option if you want to save without paying for a full year upfront.</p>
+          <button type="button" class="choose no-print" id="choose-sixmonth" data-choose="sixmonth" aria-pressed="false"><span class="choose-add">Add 6 Months to cart</span><span class="choose-in">In your cart · Remove</span></button>
         </div>
 
         <div class="plan best" data-plan="yearly">
@@ -445,7 +465,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <p class="billed num">$1,440 XCD billed once a year</p>
           <span class="save num">Save $360 per year · 20% off</span>
           <ul>
-            <li>Everything in Quarterly</li>
+            <li>Everything in 6 Months</li>
             <li>Quarterly SEO review and keyword updates</li>
             <li>Monthly security and uptime checks</li>
             <li>Priority turnaround on updates</li>
@@ -466,17 +486,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <ul>
             <li>Everything in Quarterly, including SEO and security</li>
             <li>Pay month to month</li>
-            <li>Switch to Yearly at any time</li>
+            <li>Switch to 6 Months or Yearly at any time</li>
             <li>You own all files and the domain</li>
           </ul>
-          <p class="note">Available after you complete your first Quarterly plan.</p>
+          <p class="note">Available after your first quarter on any plan.</p>
           <button type="button" class="choose no-print" id="choose-monthly" data-choose="monthly" aria-pressed="false"><span class="choose-add">Add Monthly to cart</span><span class="choose-in">In your cart · Remove</span></button>
         </div>
       </div>
 
       <div class="rule">
         <span class="ico">i</span>
-        <p><b>How to qualify for Monthly.</b> Every new client starts with one Quarterly plan. This covers the design and build period so your site launches properly. Once your first quarter is complete, you can stay Quarterly, move to Monthly, or save the most with Yearly.</p>
+        <p><b>How to qualify for Monthly.</b> New clients start on Quarterly, 6 Months or Yearly. The first three months cover the design and build so your site launches properly. After your first quarter, you can move to Monthly, stay where you are, or switch to a longer plan to save more.</p>
       </div>
 
       <div class="tbl-wrap">
@@ -485,6 +505,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <tbody class="num">
             <tr><td>Monthly (standard rate)</td><td>$150</td><td>$1,800</td><td>$0</td></tr>
             <tr><td>Quarterly (4 payments of $405)</td><td>$135</td><td>$1,620</td><td class="hl">$180</td></tr>
+            <tr><td>6 Months (2 payments of $750)</td><td>$125</td><td>$1,500</td><td class="hl">$300</td></tr>
             <tr><td>Yearly (1 payment of $1,440)</td><td>$120</td><td>$1,440</td><td class="hl">$360</td></tr>
           </tbody>
         </table>
@@ -500,7 +521,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p>A clear process with you involved at every step.</p>
       </div>
       <div class="steps">
-        <div class="step"><h3>Choose your plan</h3><p>Start with Quarterly or go straight to Yearly for the best price.</p></div>
+        <div class="step"><h3>Choose your plan</h3><p>Start with Quarterly, save more with 6 Months, or get the best price with Yearly.</p></div>
         <div class="step"><h3>Tell your story</h3><p>A short meeting about your business, your customers and what you want the site to do.</p></div>
         <div class="step"><h3>Review the design</h3><p>You see the draft, give feedback and approve every page before launch.</p></div>
         <div class="step"><h3>Go live</h3><p>Your site launches on your own domain. Updates and monthly reports follow.</p></div>
@@ -534,11 +555,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="sec-head"><h2>Questions, answered.</h2></div>
       <div class="faq">
         <details open><summary>Is there an upfront fee to build the website?</summary><p>No. The design and build are included in your subscription. Your first Quarterly payment of $405 XCD gets the work started.</p></details>
-        <details open><summary>Why do I need to start with a Quarterly plan?</summary><p>The first three months cover planning, design, building and launch. Starting on Quarterly means your site is properly finished before you move to a more flexible option.</p></details>
+        <details open><summary>Why can't I start on Monthly?</summary><p>The first three months cover planning, design, building and launch. Starting on Quarterly, 6 Months or Yearly means your site is properly finished before you move to a more flexible option.</p></details>
         <details open><summary>Will my business show up on Google?</summary><p>Every package includes SEO optimization. Each page gets proper titles, descriptions and keywords, your site is submitted to Google through Search Console, and your Google Business Profile is linked so you appear in local searches and on Google Maps. No one can promise the number one spot, but your site is set up to be found.</p></details>
         <details open><summary>Is my website secure?</summary><p>Yes. Every site runs on secure hosting with SSL encryption, so data sent through your site is protected and visitors see the padlock in their browser. Contact forms have spam protection, and your site is backed up regularly so it can be restored quickly if anything goes wrong.</p></details>
         <details open><summary>What happens if I cancel?</summary><p>You keep your website files and your domain name. They were yours from the start. Savvy Tech will hand over everything you need to move to any host you choose.</p></details>
-        <details open><summary>Can I change plans later?</summary><p>Yes. After your first quarter you can move between Quarterly, Monthly and Yearly. The new rate starts at your next billing date.</p></details>
+        <details open><summary>Can I change plans later?</summary><p>Yes. After your first quarter you can move between Monthly, Quarterly, 6 Months and Yearly. The new rate starts at your next billing date.</p></details>
         <details open><summary>How do I request changes to my site?</summary><p>Send a WhatsApp message or email with what you want updated, such as new photos, prices or opening hours, and it will be handled for you as part of your plan.</p></details>
       </div>
     </div>
@@ -547,7 +568,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section id="contact" class="alt close">
     <div class="wrap">
       <h2>Let's get your business online.</h2>
-      <p>Start with a Quarterly plan at $405 XCD, or lock in the best value with Yearly at $1,440 XCD.</p>
+      <p>Start with Quarterly at $405 XCD, save with 6 Months at $750 XCD, or lock in the best value with Yearly at $1,440 XCD.</p>
       <div class="cta-row">
         <a class="btn btn-wa" data-wa href="https://wa.me/14734198308?text=Hi%20Savvy%20Tech%2C%20I%27m%20interested%20in%20a%20website%20subscription." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
@@ -560,7 +581,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="contact-list">
         <div><span>WhatsApp</span><b>+1 (473) 419-8308</b></div>
         <div><span>Email</span><b>ghosten@savvytechllc.net</b></div>
-        <div><span>Website</span><b><a href="https://ghosten22.github.io/savvy-tech/" target="_blank" rel="noopener">ghosten22.github.io/savvy-tech</a></b></div>
+        <div><span>Portfolio</span><b><a href="https://ghosten22.github.io/savvy-tech/" target="_blank" rel="noopener">ghosten22.github.io/savvy-tech</a></b></div>
       </div>
     </div>
   </section>
@@ -582,6 +603,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="cart-panel" id="cartPanel" hidden>
       <div class="seg" role="radiogroup" aria-label="Choose a plan">
         <button type="button" role="radio" data-seg="quarterly" id="seg-quarterly">Quarterly</button>
+        <button type="button" role="radio" data-seg="sixmonth" id="seg-sixmonth">6 Months</button>
         <button type="button" role="radio" data-seg="yearly" id="seg-yearly">Yearly</button>
         <button type="button" role="radio" data-seg="monthly" id="seg-monthly">Monthly</button>
       </div>
@@ -619,8 +641,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   var WA="14734198308", EMAIL="ghosten@savvytechllc.net";
   var PLANS={
     quarterly:{name:"Quarterly",monthly:"$135 XCD",billed:"$405 XCD every 3 months",save:"$45 per quarter (10% off)",note:""},
+    sixmonth:{name:"6 Months",monthly:"$125 XCD",billed:"$750 XCD every 6 months",save:"$150 per 6 months (17% off)",note:""},
     yearly:{name:"Yearly",monthly:"$120 XCD",billed:"$1,440 XCD once a year",save:"$360 per year (20% off)",note:""},
-    monthly:{name:"Monthly",monthly:"$150 XCD",billed:"$150 XCD every month",save:"Standard rate",note:"Monthly is for existing clients who have completed their first Quarterly plan. New clients start on Quarterly or Yearly."}
+    monthly:{name:"Monthly",monthly:"$150 XCD",billed:"$150 XCD every month",save:"Standard rate",note:"Monthly is for existing clients who have completed their first quarter. New clients start on Quarterly, 6 Months or Yearly."}
   };
   var DEFAULT_MSG="Hi Savvy Tech, I'm interested in a website subscription.";
   var $=function(id){return document.getElementById(id)};
@@ -715,7 +738,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>Savvy Tech · Grenada · +1 (473) 419-8308 · ghosten@savvytechllc.net</span>
-    <span>Prices in Eastern Caribbean Dollars (XCD). Proposal valid for 30 days.</span>
   </div>
 </footer>
 </body>
