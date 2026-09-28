@@ -501,6 +501,11 @@ body.has-cart{padding-bottom:110px}
 .sp .pdf-line{text-align:center;margin-top:20px;font-size:15px}
 .sp .pdf-line a{color:var(--accent)}
 html{scroll-padding-bottom:120px}
+.to-top{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:40;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(29,29,31,.82);-webkit-backdrop-filter:saturate(180%) blur(16px);backdrop-filter:saturate(180%) blur(16px);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.22);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s,background .2s,bottom .25s}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:#0071e3}
+.to-top:focus-visible{outline:2px solid #0071e3;outline-offset:3px}
+.to-top svg{width:20px;height:20px}
 .gnav ul a,.nav-cta,.brand{white-space:nowrap}
 .gnav ul{flex-wrap:nowrap}
 @media (min-width:1069px) and (max-width:1240px){.gnav ul{gap:22px}}
@@ -532,6 +537,17 @@ html{background:#000}
 .sp .sp-work-cap h3{font-size:19px;font-weight:600;letter-spacing:-0.015em}
 .sp .sp-work-cap p{font-size:15px;color:var(--ink-2);margin-top:4px}
 @media (max-width:640px){.sp .sp-work-grid{grid-template-columns:1fr}}
+
+.spon{background:#000;color:#f5f5f7;padding:110px 0}
+.spon .spon-head{text-align:center;max-width:720px;margin:0 auto 44px}
+.spon .spon-sub{font-size:clamp(19px,2.2vw,24px);color:#a1a1a6;margin-top:12px;line-height:1.3}
+.spon-card{max-width:820px;margin:0 auto;display:flex;gap:28px;align-items:center;background:linear-gradient(145deg,#1d1d1f,#111113);border:1px solid #333336;border-radius:24px;padding:clamp(24px,4vw,40px)}
+.spon-medal{flex:none;width:84px;height:84px;border-radius:50%;display:grid;place-items:center;color:#f0b43c;background:radial-gradient(circle at 35% 30%,rgba(240,180,60,.28),rgba(240,180,60,.06) 70%);border:1px solid rgba(240,180,60,.35)}
+.spon-medal svg{width:46px;height:46px}
+.spon-tag{font-size:13px;font-weight:600;color:#f0b43c;letter-spacing:.02em;text-transform:uppercase}
+.spon-body h3{font-size:clamp(22px,2.8vw,30px);font-weight:600;line-height:1.15;letter-spacing:-.015em;margin-top:8px;text-wrap:balance}
+.spon-school{font-size:17px;color:#a1a1a6;margin-top:10px}
+@media (max-width:560px){.spon{padding:80px 0}.spon-card{flex-direction:column;text-align:center;gap:18px}}
 </style>
 </head>
 <body>
@@ -951,6 +967,25 @@ html{background:#000}
   </div>
 </section>
 
+<section class="spon" id="sponsorship" aria-labelledby="spon-title">
+  <div class="wrap">
+    <div class="spon-head">
+      <h2 class="h2" id="spon-title">Sponsorship.</h2>
+      <p class="spon-sub">Investing in the next generation of tech talent in Grenada.</p>
+    </div>
+    <article class="spon-card">
+      <div class="spon-medal" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h16l-4 14h-8z"/><path d="M20 4l4 14 4-14"/><circle cx="24" cy="31" r="12"/><path d="M24 24.5l2 4.1 4.5.6-3.3 3.1.8 4.4-4-2.1-4 2.1.8-4.4-3.3-3.1 4.5-.6z"/></svg>
+      </div>
+      <div class="spon-body">
+        <p class="spon-tag">Hillsborough Secondary School Annual Award Ceremony &middot; 2022 to present</p>
+        <h3>Savvy Tech Award for Most Outstanding Performer in Information Technology (CSEC)</h3>
+      </div>
+    </article>
+  </div>
+</section>
+
+
 
 <div class="sp">
   <section id="faq">
@@ -1048,7 +1083,7 @@ html{background:#000}
       <div class="foot-logo"><svg viewBox="0 0 558 167" role="img" aria-label="Savvy Tech"><use href="#st-logo"/></svg></div>
       <div><h4>Work</h4><ul><li><a href="#work">All work</a></li><li><a href="#web">Websites</a></li><li><a href="#graphic">Graphic design</a></li></ul></div>
       <div><h4>Services</h4><ul><li><a href="#plans">Website plans</a></li><li><a href="#services">Website design</a></li><li><a href="#services">Brand identity</a></li><li><a href="#services">Print and social</a></li><li><a href="#services">Dashboards and reporting</a></li><li><a href="#services">Hosting and care</a></li><li><a href="#services">IT consultation</a></li><li><a href="#services">Software solutions</a></li></ul></div>
-      <div><h4>Partners</h4><ul><li><a href="#partners">Our partners</a></li><li><a href="https://www.instagram.com/afgraphicsdesigns/" target="_blank" rel="noopener">AF Graphics Designs</a></li></ul></div>
+      <div><h4>Partners</h4><ul><li><a href="#partners">Our partners</a></li><li><a href="#sponsorship">Sponsorship</a></li><li><a href="https://www.instagram.com/afgraphicsdesigns/" target="_blank" rel="noopener">AF Graphics Designs</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:ghosten@savvytechllc.net">Email</a></li><li><a href="https://wa.me/14734198308" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="#about">About</a></li></ul></div>
       <div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/savvy_tech_gnd/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/in/greg-hosten-3477531a5/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
     </div>
@@ -1144,6 +1179,27 @@ html{background:#000}
   size();
   window.addEventListener('orientationchange',function(){setTimeout(size,300)});
   if(!touch) window.addEventListener('resize',size);
+})();
+</script>
+<button type="button" class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></button>
+<script>
+(function(){
+  var b=document.getElementById('toTop'); if(!b) return;
+  var cart=document.getElementById('cart');
+  function place(){
+    if(cart && !cart.hidden){ var t=cart.querySelector('.cart-inner').getBoundingClientRect().top; b.style.bottom=Math.max(24, window.innerHeight - t + 12)+'px'; }
+    else b.style.bottom='';
+  }
+  function cartOpen(){ var pnl=document.getElementById('cartPanel'); return cart && !cart.hidden && pnl && !pnl.hidden; }
+  function upd(){ b.classList.toggle('show', window.scrollY > window.innerHeight*0.8 && !cartOpen()); place(); }
+  window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',place); upd();
+  if(cart && window.MutationObserver){ new MutationObserver(function(){setTimeout(upd,30)}).observe(cart,{attributes:true,subtree:true,attributeFilter:['hidden','class']}); }
+  if(cart && window.ResizeObserver){ new ResizeObserver(place).observe(cart.querySelector('.cart-inner')); }
+  b.addEventListener('click',function(){
+    var smooth=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top:0,behavior:smooth?'smooth':'auto'});
+    var brand=document.querySelector('.gnav .brand'); if(brand) setTimeout(function(){brand.focus({preventScroll:true})},smooth?600:0);
+  });
 })();
 </script>
 <script>
