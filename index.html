@@ -500,6 +500,15 @@ body.has-cart{padding-bottom:110px}
 .sp .pdf-line{text-align:center;margin-top:20px;font-size:15px}
 .sp .pdf-line a{color:var(--accent)}
 html{scroll-padding-bottom:120px}
+.gnav ul a,.nav-cta,.brand{white-space:nowrap}
+.gnav ul{flex-wrap:nowrap}
+@media (min-width:1069px) and (max-width:1240px){.gnav ul{gap:22px}}
+@media (min-width:834px) and (max-width:1068px){
+  .gnav ul{position:fixed;top:48px;left:0;right:0;flex-direction:column;gap:0;background:#000;padding:12px 32px 32px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;border-bottom:1px solid #333336}
+  .gnav ul a{font-size:24px;font-weight:600;color:#f5f5f7;display:block;padding:10px 0}
+  .gnav.open ul{opacity:1;transform:none;pointer-events:auto}
+  .menu-btn{display:block}
+}
 html{background:#000}
 .hero{min-height:calc(100vh - 48px);min-height:calc(100lvh - 48px)}
 @media (hover:none) and (pointer:coarse){.hero{min-height:calc(100vh + 100px);min-height:calc(100lvh + 100px);padding-bottom:210px}}
