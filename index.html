@@ -1112,6 +1112,21 @@ html{background:#000}
   document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 <script>
+/* Fill the phone screen with the hero in every browser, including iOS Safari */
+(function(){
+  var hero=document.querySelector('.hero'); if(!hero) return;
+  var touch=matchMedia('(hover:none) and (pointer:coarse)').matches;
+  function size(){
+    var h=Math.max(window.innerHeight||0, document.documentElement.clientHeight||0, (window.visualViewport&&visualViewport.height)||0);
+    if(touch) h=Math.max(h, screen.height||0, screen.width>screen.height?0:screen.height) + 100;
+    hero.style.minHeight=(h-48)+'px';
+  }
+  size();
+  window.addEventListener('orientationchange',function(){setTimeout(size,300)});
+  if(!touch) window.addEventListener('resize',size);
+})();
+</script>
+<script>
 (function(){
   var WA="14734198308", EMAIL="ghosten@savvytechllc.net";
   var PLANS={
